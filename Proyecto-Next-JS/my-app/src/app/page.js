@@ -55,8 +55,10 @@ export default function Home() {
         <Button onClick={cambiarNombre} text="Cambiar Nombre"/>
 
         <input placeholder='Ingrese el nombre' id= "nombreInput" type = "text"/>
-
+        <label>
         <input type='checkbox' id = "decrementar" value="false"></input>
+        <input type='checkbox' id = "decrementar" value="true"></input>
+        </label>
       </footer>
     </>
   );

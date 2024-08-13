@@ -34,8 +34,11 @@ export default function Home() {
     }, [nombre]
   )
   }
+
+  
   //FIN
   return (
+    // variant="meet"
     <>
       <Card className = {styles.Card} titleClassName={styles.titleClassName} footerClassName={styles.footerClassName} title="Lengua y Literatura" teacher="Clase muy entretenida">
         <Button onClick={botonPrueba} text="Lengua" />

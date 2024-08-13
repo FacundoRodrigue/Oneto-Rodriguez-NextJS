@@ -1,6 +1,18 @@
 "use client"
-export default function Button({onClick, text}) {
+
+import styles from "./Button.module.css"
+import clsx from "clsx"
+
+export default function Button({onClick, text, variant}) {
     return (
-        <button onClick={onClick} >{text}</button>
+        <button className={
+            clsx(
+                {
+                    [styles.button]:true,
+                    [styles.variant_meet]: variant == "meet",
+                    [styles.variant_asigment]: variant == "asigment",
+                }
+            )}
+            onClick={onClick} >{text}</button>
     )
 }

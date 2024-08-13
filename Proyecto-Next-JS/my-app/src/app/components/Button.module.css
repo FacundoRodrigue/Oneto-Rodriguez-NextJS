@@ -1,0 +1,13 @@
+.button{
+    border-radius: 100px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.variant_meet{
+    background-color: blue;
+    color: white;
+}
+.variant_asigment{
+    background-color: green;
+    color: white;
+}

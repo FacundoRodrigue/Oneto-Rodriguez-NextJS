@@ -1,12 +1,10 @@
 "use client"
-// components/Checkbox.js
-export default function Checkbox({ id, checked, onChange }) {
+
+export default function Checkbox({ id, type, name, text, forInput }) {
     return (
-      <input 
-        type="checkbox" 
-        id={id} 
-        checked={checked} 
-        onChange={onChange} 
-      />
+        <div >
+          <input type={type} id={id} name={name} />
+          <label for={forInput}>{text}</label>
+        </div>
     );
-  }
+}

@@ -60,14 +60,11 @@ export default function Home() {
       <footer>
         <h1>Ejercicio del profe</h1>
         <h2>Numero: {numero}</h2>
-
         <h2>Nombre: {nombre}</h2>
         <Button onClick={handleNombreChange} text="Cambiar Nombre" />
         <input placeholder='Ingrese el nombre' id="nombreInput" type="text" />
-        <div >
-          <input type="checkbox" id="decrementar" name="decrementar" />
-          <label for="decrementar">decrementar</label>
-        </div>
+        <Checkbox type="checkbox" id="decrementar" name="decrementar" forInput="decrementar" text="¿Decrementar?"></Checkbox>
+        <br/>
       </footer>
     </>
   );

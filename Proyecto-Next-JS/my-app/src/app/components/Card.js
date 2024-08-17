@@ -21,7 +21,7 @@ export default function Card({title, curse, teacher, onClick, children, imageUrl
             <div className={styles.footerClassName}>
                 {children}
             </div>  
-
+            <br />
             
         </div>
     )

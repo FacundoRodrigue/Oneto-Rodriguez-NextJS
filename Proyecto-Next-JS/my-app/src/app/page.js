@@ -30,26 +30,31 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Clase muy entretenida">
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
           <Button onClick={() => console.log("funciona")} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
-        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
           <Button onClick={() => console.log("funciona")} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
-        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
           <Button onClick={() => console.log("funciona")} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
-        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
           <Button onClick={() => console.log("funciona")} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
-        <Card title="Lengua y Literatura" teacher="Clase muy entretenida" imageUrl="/TeacherMessi.png">
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
           <Button onClick={() => console.log("funciona")} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+        
       </main>
 
       <footer>

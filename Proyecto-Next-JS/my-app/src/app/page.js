@@ -1,67 +1,68 @@
-"use client"
+"use client";
 import { useEffect, useState } from 'react';
-import Button from './components/Button';
-import Card from './components/Card';
 import styles from './page.module.css';
 
+import Button from './components/Button';
+import Card from './components/Card';
+import Checkbox from './components/Checkbox';
+import Icon from './components/Icon';
+
 export default function Home() {
-  function botonPrueba() {
-    console.log("funciona");
+  let [numero, setNumero] = useState(0);
+  let [nombre, setNombre] = useState("");
+
+  function incrementarODecrementar() {
+    let decrementar = document.getElementById("decrementar").checked
+    
+    if (decrementar==false) {
+      setNumero(numero += 1);
+    } else {
+      setNumero(numero -= 1);
+    }
   }
 
-  //Ejercicio del Profe INICIO  
-  let [numero, setNumero] = useState(0)
-  let [nombre, setNombre] = useState("")
-  let decremento = document.getElementById("decrementar")
-  ;
-  console.log(decremento)
-  
-  function sumarNumero(){
-    setNumero(numero+1)
-  }
-  function cambiarNombre(){
-    let nombreModificado = document.getElementById("nombreInput").value;
-    setNombre(nombreModificado)
-  }
-  if (decremento === true){
-    useEffect(()=> {
-      setNumero(numero-2)
-    }, [nombre]
-  )
-  } else {
-    useEffect(()=> {
-      setNumero(numero+2)
-    }, [nombre]
-  )
+  function handleNombreChange() {
+    const nombreModificado = document.getElementById("nombreInput").value;
+    setNombre(nombreModificado);
+    incrementarODecrementar()
   }
 
-  
-  //FIN
   return (
-    // variant="meet"
     <>
-      <Card className = {styles.Card} titleClassName={styles.titleClassName} footerClassName={styles.footerClassName} title="Lengua y Literatura" teacher="Clase muy entretenida">
-        <Button onClick={botonPrueba} text="Lengua" />
-        <Button onClick={botonPrueba} text="Lengua" />
-      </Card>
-      <Card className = {styles.Card} titleClassName={styles.titleClassName} footerClassName={styles.footerClassName} title="Lengua y Literatura" teacher="Clase muy entretenida">
-        <Button onClick={botonPrueba} text="Lengua" />
-        <Button onClick={botonPrueba} text="Lengua" />
-      </Card>
+      <main className={styles.main}>
+        <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Clase muy entretenida">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+        <Card title="Lengua y Literatura" teacher="Clase muy entretenida">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+        <Card title="Lengua y Literatura" teacher="Clase muy entretenida" imageUrl="/TeacherMessi.png">
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={() => console.log("funciona")} text="Lengua" />
+        </Card>
+      </main>
 
       <footer>
         <h1>Ejercicio del profe</h1>
         <h2>Numero: {numero}</h2>
-        <Button onClick={sumarNumero} text="Incrementar/Decrementar"/>
 
         <h2>Nombre: {nombre}</h2>
-        <Button onClick={cambiarNombre} text="Cambiar Nombre"/>
-
-        <input placeholder='Ingrese el nombre' id= "nombreInput" type = "text"/>
-        <label>
-        <input type='checkbox' id = "decrementar" value="false"></input>
-        <input type='checkbox' id = "decrementar" value="true"></input>
-        </label>
+        <Button onClick={handleNombreChange} text="Cambiar Nombre" />
+        <input placeholder='Ingrese el nombre' id="nombreInput" type="text" />
+        <div >
+          <input type="checkbox" id="decrementar" name="decrementar" />
+          <label for="decrementar">decrementar</label>
+        </div>
       </footer>
     </>
   );

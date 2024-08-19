@@ -10,8 +10,9 @@ import Icon from './components/Icon';
 export default function Home() {
   let [numero, setNumero] = useState(0);
   let [nombre, setNombre] = useState("");
+  const [restar, setRestar] = useState(false)
 
-  function incrementarODecrementar() {
+  function incrementarODecrementarUno() {
     let decrementar = document.getElementById("decrementar").checked
     
     if (decrementar==false) {
@@ -24,8 +25,25 @@ export default function Home() {
   function handleNombreChange() {
     const nombreModificado = document.getElementById("nombreInput").value;
     setNombre(nombreModificado);
-    incrementarODecrementar()
+    incrementarODecrementarUno()
   }
+
+  function trueOFalse(event){
+    console.log(event.target.checked)
+    setRestar(event.target.checked);
+  }
+  function cambio(event){
+    return setNombre(event.target.value);
+  }
+  function handleNombreChangeDos() {
+    
+    if ( restar == true){
+      setNumero(numero - 1)
+    } else{
+      setNumero(numero + 1)
+    }
+  }
+  
 
   return (
     <>
@@ -58,13 +76,24 @@ export default function Home() {
       </main>
 
       <footer>
-        <h1>Ejercicio del profe</h1>
-        <h2>Numero: {numero}</h2>
-        <h2>Nombre: {nombre}</h2>
-        <Button onClick={handleNombreChange} text="Cambiar Nombre" />
-        <input placeholder='Ingrese el nombre' id="nombreInput" type="text" />
-        <Checkbox type="checkbox" id="decrementar" name="decrementar" forInput="decrementar" text="¿Decrementar?"></Checkbox>
-        <br/>
+        <div>
+          <h1>Ejercicio del profe</h1>
+          <h2>Numero: {numero}</h2>
+          <h2>Nombre: {nombre}</h2>
+          <Button onClick={handleNombreChange} text="Cambiar Nombre" />
+          <input placeholder='Ingrese el nombre' id="nombreInput" type="text" />
+          <Checkbox type="checkbox" id="decrementar" name="decrementar" forInput="decrementar" text="¿Decrementar?"></Checkbox>
+          <br/>
+        </div>
+        <div>
+          <h1>Ejercicio del profe | Mejora con OnChange</h1>
+          <h2>Numero: {numero}</h2>
+          <h2>Nombre: {nombre}</h2>
+          <Button onClick={handleNombreChangeDos} text="Cambiar Nombre" />
+          <input placeholder='Ingrese el nombre'  type="text" onChange={cambio}/>
+          <Checkbox type="checkbox"  name="decrementarDos" forInput="decrementarDos" text="¿Decrementar?" onChange={trueOFalse}></Checkbox>
+          <br/>
+        </div>
       </footer>
     </>
   );

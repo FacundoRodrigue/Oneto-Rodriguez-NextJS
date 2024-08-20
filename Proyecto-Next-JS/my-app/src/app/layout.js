@@ -1,14 +1,12 @@
 "use client"
 
-import "./globals.css";
 import styles from './page.module.css';
-
 import Icon from "./components/Icon";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={styles.body}>
         <header className={styles.header}>
           <div className={styles.divHeader}>
             <Icon hrefIcon="./predeterminados" srcImg="./Menu.png"></Icon>

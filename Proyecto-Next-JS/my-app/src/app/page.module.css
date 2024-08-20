@@ -10,3 +10,28 @@
     flex-direction: row;
     align-items: center;
 }
+
+.body {
+    display: block;
+    margin: 0;
+}
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+
+    box-shadow: 0 1px 4px #5f6368;
+}

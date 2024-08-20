@@ -6,11 +6,20 @@ import Button from './components/Button';
 import Card from './components/Card';
 import Checkbox from './components/Checkbox';
 import Icon from './components/Icon';
+import Link from 'next/link';
+
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   let [numero, setNumero] = useState(0);
   let [nombre, setNombre] = useState("");
   const [restar, setRestar] = useState(false)
+  const router = useRouter(); //Habilitar el router de next
+
+  function cambioDeDIreccion(){
+    router.push("/predeterminados")
+  }
+  
 
   function incrementarODecrementarUno() {
     let decrementar = document.getElementById("decrementar").checked
@@ -49,7 +58,7 @@ export default function Home() {
     <>
       <main className={styles.main}>
         <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
-          <Button onClick={() => console.log("funciona")} text="Lengua" />
+          <Button onClick={cambioDeDIreccion} text="Lengua" />
           <Button onClick={() => console.log("funciona")} text="Lengua" />
         </Card>
         <Card title="Lengua y Literatura" curse="5to A informatica" teacher="Martin Rivas" imageUrl="/TeacherMessi.png">
@@ -75,7 +84,7 @@ export default function Home() {
         
       </main>
 
-      <footer>
+      <footer className={styles.footer}>
         <div>
           <h1>Ejercicio del profe</h1>
           <h2>Numero: {numero}</h2>
